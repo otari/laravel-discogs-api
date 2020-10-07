@@ -3,12 +3,25 @@
     "description": "Laravel package for discogs api",
     "type": "library",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Otar Tsilosani",
             "email": "o.tsilosani@livo.ge"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "DiscogsLaravel\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DiscogsLaravel\\DiscogsServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }
