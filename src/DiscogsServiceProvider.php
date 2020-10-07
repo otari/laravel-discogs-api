@@ -13,7 +13,9 @@ class DiscogsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../config/discogs-laravel.php' => config_path('discogs-laravel.php'),
+        ], 'discogs-laravel-config');
     }
 
     /**
@@ -23,6 +25,13 @@ class DiscogsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-discogs.php', 'discogs-laravel');
+
+        $this->app->singleton('discogs', function () {
+
+            $config = config('discogs-laravel');
+
+            return new DiscogsApi(app(Client::class), $config['token'], $config['headers']['User-Agent']);
+        });
     }
 }

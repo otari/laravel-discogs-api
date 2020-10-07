@@ -12,13 +12,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "DiscogsLaravel\\": "src"
+            "Otsilosani\\DiscogsLaravel\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "DiscogsLaravel\\DiscogsServiceProvider"
+                "Otsilosani\\DiscogsLaravel\\DiscogsServiceProvider"
             ]
         }
     },
