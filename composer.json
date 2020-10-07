@@ -1,0 +1,14 @@
+{
+    "name": "otsilosani/discogs-laravel",
+    "description": "Laravel package for discogs api",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Otar Tsilosani",
+            "email": "o.tsilosani@livo.ge"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
