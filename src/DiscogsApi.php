@@ -3,6 +3,7 @@
 
 namespace Otsilosani\DiscogsLaravel;
 
+use Illuminate\Support\Facades\Http;
 use Otsilosani\DiscogsLaravel\Resouces\Operations\Operation;
 
 class DiscogsApi
@@ -14,6 +15,9 @@ class DiscogsApi
 
     public function execute(Operation $operation)
     {
+        dd($operation->getRequestUri());
+//        $response = Http::get('https://api.discogs.com/artists/1/releases');
+//        return $response->json();
         //Prepare Guzzle
 
         //Get Guzzle Options from operation
@@ -22,6 +26,6 @@ class DiscogsApi
 
         //Return response
 
-        return $operation->run();
+        //return $operation->run();
     }
 }

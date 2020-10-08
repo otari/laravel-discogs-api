@@ -9,11 +9,6 @@ interface OperationContract
     /**
      * @return mixed
      */
-    public function run();
-
-    /**
-     * @return mixed
-     */
     public function getRequestOptions();
 
     /**
@@ -22,6 +17,7 @@ interface OperationContract
     public function getRequestMethod() : string;
 
     /**
+     * @param array $array
      * @return string
      */
     public function getRequestUri() : string;

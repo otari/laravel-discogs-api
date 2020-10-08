@@ -7,21 +7,18 @@ use Otsilosani\DiscogsLaravel\Resouces\Operations\Operation;
 
 class Artist extends Operation implements OperationContract
 {
-    CONST URI = '/user/%s/';
-    CONST METHOD = 'GET';
-
     private $id;
 
+    private $configuration = [];
+
+    /**
+     * Artist constructor.
+     * @param int $id
+     */
     public function __construct(int $id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return array|mixed
-     */
-    public function run() {
-        return [1,2,3];
+        $this->configuration = $this->getConfiguration();
     }
 
     /**
@@ -35,16 +32,16 @@ class Artist extends Operation implements OperationContract
     /**
      * @inheritDoc
      */
-    public function getRequestUri(): string
+    public function getRequestMethod(): string
     {
-        return sprintf(self::URI, $this->id);
+        return self::METHOD;
     }
 
     /**
      * @inheritDoc
      */
-    public function getRequestMethod(): string
+    public function getRequestUri(): string
     {
-        return self::METHOD;
+        return $this->builtRequestUri($this->configuration['uri'], array($this->id));
     }
 }
