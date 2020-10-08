@@ -19,7 +19,7 @@ class DiscogsServiceProvider extends ServiceProvider
     }
 
     /**
-     * [register description]
+     * register
      *
      * @return [type] [description]
      */
@@ -29,7 +29,8 @@ class DiscogsServiceProvider extends ServiceProvider
 
         $this->app->singleton('discogs', function () {
             $config = config('discogs-laravel');
-            return new DiscogsApi(app(Client::class), $config['token'], $config['headers']['User-Agent']);
+            //app(Client::class), $config['token'], $config['headers']['User-Agent']
+            return new DiscogsApi();
         });
     }
 }
