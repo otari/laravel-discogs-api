@@ -34,7 +34,7 @@ class Artist extends Operation implements OperationContract
      */
     public function getRequestMethod(): string
     {
-        return self::METHOD;
+        return $this->configuration['method'];
     }
 
     /**

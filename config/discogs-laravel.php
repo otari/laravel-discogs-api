@@ -12,8 +12,6 @@ return [
          */
         'User-Agent' => env('DISCOGS_USER_AGENT_NAME', ''),
     ],
-
-
     'resources' => [
         'operations' => [
             \Otsilosani\DiscogsLaravel\Resouces\Operations\Artist\Artist::class => [
